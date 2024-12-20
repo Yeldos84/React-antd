@@ -1,5 +1,5 @@
 import { PersonContext } from './PersonContext';
-import React, {useContext} from 'react';
+import React, { useContext } from 'react';
 import { useState } from 'react';
 import { AddPosts } from './AddPosts'
 
@@ -7,12 +7,12 @@ export function ClickButton() {
     // let postCount = 1;
     const [count, setCount] = useState(1);
     const [posts, setPosts] = useState([]);
-    const { person, setPerson } = useContext(PersonContext); 
-    
+    const { person, setPerson } = useContext(PersonContext);
+
     function counter() {
         return setCount(count + 1)
-    };     
-    function press(e){
+    };
+    function press(e) {
         const input = document.getElementById('post-input');
         console.log(input.value);
 
@@ -20,11 +20,11 @@ export function ClickButton() {
             alert('Add text for post');
             input.style.backgroundColor = 'red';
         }
-        else{
+        else {
             counter()
             alert("Add new post?")
             input.style.backgroundColor = 'white';
-            
+
             const newPost = {
                 id: count,
                 text: input.value,
@@ -36,11 +36,11 @@ export function ClickButton() {
             setPosts(prev => [...prev, newPost]);
             input.value = '';
         }
-        
-        
-        
-        
-        
+
+
+
+
+
 
     }
 
@@ -51,7 +51,7 @@ export function ClickButton() {
             )
         );
     }
-    
+
     return (
         <>
             <button className="btn btn-outline-secondary" type="button" onClick={press}>
