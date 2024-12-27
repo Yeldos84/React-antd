@@ -9,6 +9,8 @@ const { Title } = Typography;
 import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
 import { Settings } from './Settings';
 import  Home  from './Home';
+import { GetUsers } from './Api';
+import  ApiPage  from './ApiPage';
 
 
 
@@ -17,10 +19,12 @@ const HomePage = () => (
    <nav>
         <Link to="/"> <Title level={3}>Home</Title></Link>
         <Link to="/settings"><Title level={3}>Settings</Title></Link>
+        <Link to="/api"><Title level={3}>API</Title></Link>
   </nav>
     <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/settings" element={<Settings />} />
+        <Route path="/api" element={< ApiPage />} />
     </Routes>
     {/* <Breadcrumb
       items={[

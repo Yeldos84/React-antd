@@ -1,11 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { PersonContext } from './PersonContext';
+import { Flex } from 'antd';
 import axios from 'axios';
 
 import { CloseSquareFilled, SearchOutlined } from '@ant-design/icons';
 import { Button, Input, Select, Slider, Space } from 'antd';
 import { GetUsers } from './Api';
-
+import UserForm from './UseForm';
+import { GetDjangoUsers } from './GetDjangoUsers';
 
 export function Settings() {
     const { person, setPerson } = useContext(PersonContext);
@@ -25,9 +27,6 @@ export function Settings() {
                     <Input placeholder="some text" />
                     <Button type="primary">Submit</Button>
                 </Space.Compact>
-            </div>
-            <div>
-                <GetUsers/>
             </div>
         </>
     )
